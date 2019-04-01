@@ -1,0 +1,255 @@
+/*
+Theme Name: Televisi UMN
+Theme URI: http://tv.umn.ac.id/
+Author: Televisi UMN
+Author URI: http://tv.umn.ac.id/
+Description: Official UMN TV Web Template
+Version: 1.0
+Text Domain: televisiumn
+*/
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i");
+/* ---------------------------------------------------
+    GLOBALS
+----------------------------------------------------- */
+body {
+  padding-top: 60px;
+  font-family: 'Lato', sans-serif; }
+
+/* ---------------------------------------------------
+    END OF GLOBALS
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    NAVBAR STYLE
+----------------------------------------------------- */
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+.navbar {
+  padding: 15px 10px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#3F04AC), color-stop(#3235C0), color-stop(#1F71D7), to(#2A93EE));
+  background-image: -webkit-linear-gradient(left, #3F04AC, #3235C0, #1F71D7, #2A93EE);
+  background-image: -o-linear-gradient(left, #3F04AC, #3235C0, #1F71D7, #2A93EE);
+  background-image: linear-gradient(to right, #3F04AC, #3235C0, #1F71D7, #2A93EE);
+  border: none;
+  border-radius: 0;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); }
+
+.navbar-btn {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none !important;
+  border: none; }
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0; }
+
+.navbar.compressed {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: white;
+  color: #1F71D7;
+  font-weight: 700;
+  -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); }
+  .navbar.compressed a {
+    color: #d7dbe4 !important; }
+  .navbar.compressed a:hover {
+    color: #35C1EB !important; }
+  .navbar.compressed .active a {
+    color: #1F71D7 !important;
+    font-weight: 900; }
+
+/* ---------------------------------------------------
+    END OF NAVBAR STYLE
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  height: 100vh;
+  z-index: 9991;
+  background-color: #2645C4;
+  color: #fff;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  overflow-y: scroll;
+  -webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); }
+
+#sidebar.active {
+  right: 0; }
+
+#dismiss {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+#dismiss:hover {
+  background: white;
+  color: #1F71D7; }
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background-color: #2645C4;
+  border-bottom: 1px solid white; }
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b; }
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px; }
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block; }
+  #sidebar ul li a:hover {
+    color: #7386D5;
+    background: #ffffff; }
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #fff;
+  background: #6d7fcc; }
+  #sidebar ul li.active > a::before,
+  a[aria-expanded="true"]::before {
+    content: "| "; }
+
+a[data-toggle="collapse"] {
+  position: relative; }
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #6d7fcc; }
+
+ul.CTAs {
+  padding: 20px; }
+  ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px; }
+
+a.download {
+  background: #fff;
+  color: #7386D5; }
+
+a.article,
+a.article:hover {
+  background: #6d7fcc !important;
+  color: #fff !important; }
+
+#sidebarCollapse i {
+  color: white; }
+
+#sidebarCollapse.compressed i {
+  color: #1F71D7; }
+
+/* ---------------------------------------------------
+    END OF SIDEBAR STYLE
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    TITLE STYLE
+----------------------------------------------------- */
+.title {
+  overflow: hidden;
+  text-align: center;
+  font-weight: 700; }
+  .title::before, .title::after {
+    background-color: #1F71D7;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%; }
+  .title::before {
+    right: 0.5em;
+    margin-left: -50%; }
+  .title::after {
+    left: 0.5em;
+    margin-right: -50%; }
+
+/* ---------------------------------------------------
+    END OF TITLE STYLE
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#headline {
+  color: white;
+  height: 80vh; }
+
+.skewed_top_left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 92vh;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#3F04AC), color-stop(#3235C0), color-stop(#1F71D7), color-stop(#2A93EE), color-stop(#35C1EB), to(#3FE1E3));
+  background-image: -webkit-linear-gradient(top left, #3F04AC, #3235C0, #1F71D7, #2A93EE, #35C1EB, #3FE1E3);
+  background-image: -o-linear-gradient(top left, #3F04AC, #3235C0, #1F71D7, #2A93EE, #35C1EB, #3FE1E3);
+  background-image: linear-gradient(to bottom right, #3F04AC, #3235C0, #1F71D7, #2A93EE, #35C1EB, #3FE1E3);
+  -webkit-transform: skewY(-10deg);
+  -ms-transform: skewY(-10deg);
+  transform: skewY(-10deg);
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  transform-origin: top left; }
+
+#contentTitle {
+  height: 20vh; }
+
+#main-content {
+  padding: 0;
+  margin: 0; }
+
+.card-deck {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* ---------------------------------------------------
+    END OF CONTENT STYLE
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    FOOTER
+----------------------------------------------------- */
