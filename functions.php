@@ -33,6 +33,7 @@ function televisiumn_enqueue_scripts3() {
 
 function customjs() {
     wp_enqueue_script( 'customjs', get_template_directory_uri() . '/js/script.js', array(), '', true );
+    wp_enqueue_script( 'customjsScroller', 'https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js', array(), '', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'bootstrapcss' );
@@ -59,6 +60,13 @@ add_action( 'after_setup_theme', 'televisiumn_wp_setup' );
 
 
 
+/* ---------------------------------------------------
+    THEME SUPPORT
+----------------------------------------------------- */
+add_theme_support('post-thumbnails');
+/* ---------------------------------------------------
+    END OF REGISTER MENU
+----------------------------------------------------- */
 
 
 /* ---------------------------------------------------
@@ -100,6 +108,58 @@ add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 /* ---------------------------------------------------
     END OF REGISTER MENU
 ----------------------------------------------------- */
+
+
+
+
+
+/* ---------------------------------------------------
+    ADD PROGRAMS PORTFOLIO
+----------------------------------------------------- */
+function awesome_custom_post_type (){
+	
+	$labels = array(
+		'name' => 'Programs',
+		'singular_name' => 'Program',
+		'add_new' => 'Add Program',
+		'all_items' => 'All Programs',
+		'add_new_item' => 'Add Program',
+		'edit_item' => 'Edit Program',
+		'new_item' => 'New Program',
+		'view_item' => 'View Program',
+		'search_item' => 'Search Portfolio',
+		'not_found' => 'No programs found',
+		'not_found_in_trash' => 'No programs found in trash',
+		'parent_item_colon' => 'Parent Program'
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'supports' => array(
+			'title',
+			'editor',
+			'excerpt',
+			'thumbnail',
+			'revisions',
+		),
+		'taxonomies' => array('category', 'post_tag'),
+		'menu_position' => 4,
+		'exclude_from_search' => false
+	);
+	register_post_type('programs',$args);
+}
+add_action('init','awesome_custom_post_type');
+/* ---------------------------------------------------
+    END OF ADD PROGRAMS PORTFOLIO
+----------------------------------------------------- */
+
+
 
 ?>
 
