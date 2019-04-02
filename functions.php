@@ -65,7 +65,7 @@ add_action( 'after_setup_theme', 'televisiumn_wp_setup' );
 ----------------------------------------------------- */
 add_theme_support('post-thumbnails');
 /* ---------------------------------------------------
-    END OF THENE SUPPORT
+    END OF THEME SUPPORT
 ----------------------------------------------------- */
 
 
