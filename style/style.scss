@@ -113,7 +113,7 @@ a:focus {
   margin: 40px 0;
 }
 
-.navbar.compressed {
+.navbar.compressed{
   padding-top: 10px;
   padding-bottom: 10px;
   background: $offwhite;
@@ -122,10 +122,9 @@ a:focus {
 
   a {
     color: $offgrey02 !important;
-  }
-
-  a:hover {
-    color: $blue06 !important;
+    &:hover {
+      color: $blue06 !important;
+    }
   }
 
   .active a {
