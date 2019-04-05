@@ -153,7 +153,7 @@ a:focus {
   right: -250px;
   height: 100vh;
   z-index: 9991;
-  background-color: $blue02;
+  background-image: linear-gradient(to bottom, $blue01, $blue06);
   color: #fff;
   transition: all 0.3s;
   overflow-y: scroll;
@@ -185,7 +185,7 @@ a:focus {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background-color: $blue02;
+  background-color: $blue01;
   border-bottom: 1px solid white;
 }
 
@@ -212,12 +212,8 @@ a:focus {
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-  color: #fff;
-  background: #6d7fcc;
-
-  &::before {
-    content: "| ";
-  }
+  color: $blue03;
+  background: $offwhite;
 }
 
 a[data-toggle="collapse"] {
