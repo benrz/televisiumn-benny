@@ -49,7 +49,7 @@
 
         <div class="card-deck mb-4">
             <?php 
-                $args = array('post_type' => 'programs');
+                $args = array('post_type' => 'programs', 'order' => 'ASC');
                 $myQuery = new WP_Query($args);
                 $index= 0;
                 $maxcard= 2;/*artinya maks 2*/

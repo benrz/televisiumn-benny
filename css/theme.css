@@ -94,7 +94,10 @@ a:focus {
   right: -250px;
   height: 100vh;
   z-index: 9991;
-  background-color: #2645C4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3235C0), to(#35C1EB));
+  background-image: -webkit-linear-gradient(top, #3235C0, #35C1EB);
+  background-image: -o-linear-gradient(top, #3235C0, #35C1EB);
+  background-image: linear-gradient(to bottom, #3235C0, #35C1EB);
   color: #fff;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -125,7 +128,7 @@ a:focus {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background-color: #2645C4;
+  background-color: #3235C0;
   border-bottom: 1px solid white; }
 
 #sidebar ul.components {
@@ -146,11 +149,8 @@ a:focus {
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
-  color: #fff;
-  background: #6d7fcc; }
-  #sidebar ul li.active > a::before,
-  a[aria-expanded="true"]::before {
-    content: "| "; }
+  color: #1F71D7;
+  background: #F6F9FC; }
 
 a[data-toggle="collapse"] {
   position: relative; }
