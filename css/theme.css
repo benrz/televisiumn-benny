@@ -223,6 +223,55 @@ a.article:hover {
     END OF TITLE STYLE
 ----------------------------------------------------- */
 /* ---------------------------------------------------
+    CARD STYLE
+----------------------------------------------------- */
+/* ---------------------------------------------------
+    END OF CARD STYLE
+----------------------------------------------------- */
+.card-deck {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .card-deck :hover .card-overlay {
+    opacity: 1; }
+
+.card .card-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+  background-color: rgba(255, 255, 255, 0.3); }
+  .card .card-overlay .icon {
+    color: #14B8FF;
+    font-size: 2em;
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center; }
+
+/* effect-shine */
+.effect-shine:hover {
+  -webkit-mask-image: -webkit-linear-gradient(165deg, rgba(255, 255, 255, 0.6) 30%, white 50%, rgba(255, 255, 255, 0.6) 70%);
+  -webkit-mask-size: 200%;
+  -webkit-animation: shine 2s infinite;
+  animation: shine 2s infinite; }
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%; }
+  to {
+    -webkit-mask-position: -50%; } }
+
+/* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
 #headline {
@@ -261,10 +310,6 @@ a.article:hover {
 #main-content {
   padding: 0;
   margin: 0; }
-
-.card-deck {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
 
 /* ---------------------------------------------------
     END OF CONTENT STYLE
