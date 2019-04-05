@@ -21,19 +21,19 @@
                     </p>
                 </div>
 
-                <?php
-                // <div class="row justify-content-center justify-content-md-start">
-                //     <div class="col-12 text-center col-md-auto">
-                //         <a href="#"><button type="button" class="btn btn-danger"
-                //                 style="margin: 5% 1% 0 0;">STREAM</button></a>
-                //     </div>
+                
+                <div class="row justify-content-center justify-content-md-start">
+                    <div class="col-12 text-center col-md-auto">
+                        <a href="#"><button type="button" class="btn btn-danger"
+                                style="margin: 5% 1% 0 0;">STREAM</button></a>
+                    </div>
 
-                //     <div class="col-12 text-center col-md-auto">
-                //         <a href="#"><button type="button" class="btn btn-dark effect-shine" style="margin-top: 5%;">SUBSCRIBE</button></a>
-                //     </div>
+                    <div class="col-12 text-center col-md-auto">
+                        <a href="#"><button type="button" class="btn btn-dark effect-shine" style="margin-top: 5%;">SUBSCRIBE</button></a>
+                    </div>
                     
-                // </div>
-                ?>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@
                 <h1 class="title">New Season</h1>
             </div>
         </div>
-<!-- 
+
         <div class="card-deck mb-4">
             <?php 
                 $args = array('post_type' => 'programs');
@@ -97,7 +97,7 @@
 
                 endif;
             ?>
-        </div> -->
+        </div>
 
         <div class="row justify-content-center" id="contentTitle">
             <div class="col-12  align-self-center">
