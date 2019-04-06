@@ -8,7 +8,7 @@
             </div>
 
             <div class="col-12 col-md-6 text-center text-md-right">
-                <p><a href="#">Back to top</a></p>
+                <p><a href="#">Backs to top</a></p>
             </div>
 
         </div>
