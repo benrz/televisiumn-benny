@@ -18,22 +18,23 @@ function fontawesome() {
 
 function televisiumn_enqueue_scripts() {
     $dependencies = array('jquery');
-    wp_enqueue_script('bootstrap', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', $dependencies, '', true );
+    wp_enqueue_script('JQuery', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', $dependencies, '', true );
 }
 
 function televisiumn_enqueue_scripts2() {
     $dependencies = array('jquery');
-    wp_enqueue_script('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', $dependencies, '', true );
+    wp_enqueue_script('PopperJS', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', $dependencies, '', true );
 }
 
 function televisiumn_enqueue_scripts3() {
     $dependencies = array('jquery');
-    wp_enqueue_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', $dependencies, '', true );
+    wp_enqueue_script('BootstrapJS', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', $dependencies, '', true );
 }
 
 function customjs() {
+	wp_enqueue_script( 'customjsScroller', 'https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js', array(), '', true );
+	wp_enqueue_script( 'JSParticle', get_template_directory_uri() . '/js/particles.min.js', array(), '', true );
     wp_enqueue_script( 'customjs', get_template_directory_uri() . '/js/script.js', array(), '', true );
-    wp_enqueue_script( 'customjsScroller', 'https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js', array(), '', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'bootstrapcss' );

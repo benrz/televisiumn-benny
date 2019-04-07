@@ -115,7 +115,7 @@ a:focus {
   margin: 40px 0;
 }
 
-.navbar.compressed{
+.navbar.compressed {
   padding-top: 10px;
   padding-bottom: 10px;
   background: $offwhite;
@@ -124,6 +124,7 @@ a:focus {
 
   a {
     color: $offgrey02 !important;
+
     &:hover {
       color: $blue06 !important;
     }
@@ -306,6 +307,12 @@ a.article:hover {
   }
 }
 
+.streamtitle {
+  overflow: hidden;
+  text-align: center;
+  font-weight: 700;
+  color: $offwhite;
+}
 /* ---------------------------------------------------
     END OF TITLE STYLE
 ----------------------------------------------------- */
@@ -320,12 +327,14 @@ a.article:hover {
 
 .card-deck {
   box-sizing: border-box;
-  :hover{
-    .card-overlay{
+
+  :hover {
+    .card-overlay {
       opacity: 1;
     }
   }
 }
+
 .card {
   .card-overlay {
     position: absolute;
@@ -338,7 +347,7 @@ a.article:hover {
     opacity: 0;
     transition: .3s ease;
     background-color: rgba(255, 255, 255, 0.3);
-    
+
     .icon {
       color: $fblue01;
       font-size: 2em;
@@ -351,9 +360,12 @@ a.article:hover {
     }
   }
 }
+
 // .card{
 //   background-color: $black03;
 // }
+
+
 /* effect-shine */
 .effect-shine:hover {
   -webkit-mask-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.6) 30%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.6) 70%);
@@ -365,11 +377,12 @@ a.article:hover {
   from {
     -webkit-mask-position: 150%;
   }
-  
+
   to {
     -webkit-mask-position: -50%;
   }
 }
+
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */

@@ -219,6 +219,12 @@ a.article:hover {
     left: 0.5em;
     margin-right: -50%; }
 
+.streamtitle {
+  overflow: hidden;
+  text-align: center;
+  font-weight: 700;
+  color: #F6F9FC; }
+
 /* ---------------------------------------------------
     END OF TITLE STYLE
 ----------------------------------------------------- */

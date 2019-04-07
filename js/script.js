@@ -38,3 +38,8 @@ $(document).ready(function () {
         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
     });
 });
+
+/* JS Particle */
+particlesJS.load('particles-js', theme_directory + '/assets/particlesjs-config.json', function () {
+    console.log('callback - particles.js config loaded');
+});
