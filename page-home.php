@@ -107,7 +107,7 @@
 
     <?php ## NEW SEASON ## ?>
     <div class="container" style="margin-top:3%;">
-        <div class="row justify-content-center" id="contentTitle">
+        <div class="row justify-content-center contentTitle">
             <div class="col-12  align-self-center">
                 <h1 class="title">New Season</h1>
             </div>

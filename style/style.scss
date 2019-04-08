@@ -42,7 +42,7 @@ $offgrey: #d7dbe4;
 $offgrey02: #8897AA;
 $offgrey03: #c2c6cf;
 
-$offwhite: #F6F9FC;
+$offwhite: #f1f5f8;
 
 $offblack: #4f5968;
 
@@ -54,7 +54,8 @@ $pred: #d33a27;
 /* ---------------------------------------------------
     GLOBALS
 ----------------------------------------------------- */
-html, body{
+html,
+body {
   height: 100%;
 }
 
@@ -65,7 +66,7 @@ body {
   flex-direction: column;
 }
 
-.main-content{
+.main-content {
   flex-grow: 1;
   margin-top: 0px;
 }
@@ -286,49 +287,12 @@ a.article:hover {
 ----------------------------------------------------- */
 
 
-/* ---------------------------------------------------
-    TITLE STYLE
------------------------------------------------------ */
 
-.title {
-  overflow: hidden;
-  text-align: center;
-  font-weight: 700;
-  color: $offblack;
 
-  &::before,
-  &::after {
-    background-color: $offgrey03;
-    content: "";
-    display: inline-block;
-    height: 1px;
-    position: relative;
-    vertical-align: middle;
-    width: 50%;
-  }
-
-  &::before {
-    right: 0.5em;
-    margin-left: -50%;
-  }
-
-  &::after {
-    left: 0.5em;
-    margin-right: -50%;
-  }
-}
-/* ---------------------------------------------------
-    END OF TITLE STYLE
------------------------------------------------------ */
 
 /* ---------------------------------------------------
     CARD STYLE
 ----------------------------------------------------- */
-
-/* ---------------------------------------------------
-    END OF CARD STYLE
------------------------------------------------------ */
-
 .card-deck {
   box-sizing: border-box;
 
@@ -365,11 +329,6 @@ a.article:hover {
   }
 }
 
-// .card{
-//   background-color: $black03;
-// }
-
-
 /* effect-shine */
 .effect-shine:hover {
   -webkit-mask-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.6) 30%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.6) 70%);
@@ -386,6 +345,14 @@ a.article:hover {
     -webkit-mask-position: -50%;
   }
 }
+
+/* ---------------------------------------------------
+    END OF CARD STYLE
+----------------------------------------------------- */
+
+
+
+
 
 /* ---------------------------------------------------
     CONTENT STYLE
@@ -408,13 +375,63 @@ a.article:hover {
   transform-origin: top left;
 }
 
-#contentTitle {
-  height: 20vh;
+/////////////////////////////////////
+//  Title Of Page
+/////////////////////////////////////
+#pageTitle {
+  margin-bottom: 1em;
+  padding-top: 3.5em;
 }
 
+.title-page {
+  overflow: hidden;
+  text-align: left;
+  font-weight: 900;
+  color: $offblack;
+}
+
+.contentTitle {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.title {
+  overflow: hidden;
+  text-align: center;
+  font-weight: 900;
+  color: $offblack;
+
+  &::before,
+  &::after {
+    background-color: $offgrey03;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+  }
+
+  &::before {
+    right: 0.5em;
+    margin-left: -50%;
+  }
+
+  &::after {
+    left: 0.5em;
+    margin-right: -50%;
+  }
+}
+
+/////////////////////////////////////
+//  END OF Title Of Page
+////////////////////////////////////
+
+
+/////////////////////////////////////
+//  Content
+/////////////////////////////////////
 #main-content {
-  // background: $black02;
-  // color: $brokenwhite;
   padding: 0;
   margin: 0;
 }
@@ -426,6 +443,11 @@ a.article:hover {
   font-weight: 700;
   color: $offblack;
 }
+
+/////////////////////////////////////
+//  END OF Content
+/////////////////////////////////////
+
 /* ---------------------------------------------------
     END OF CONTENT STYLE
 ----------------------------------------------------- */
@@ -436,7 +458,7 @@ a.article:hover {
 /* ---------------------------------------------------
     FOOTER
 ----------------------------------------------------- */
-.footer{
+.footer {
   width: 100%;
   padding: 0;
   flex-shrink: 0;
