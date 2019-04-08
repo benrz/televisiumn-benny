@@ -45,7 +45,7 @@
                                 <div class="col-12 text-center col-md-auto">
                                 <?php
                                     $url= get_permalink();
-                                    echo'<a href="'.$url.'/watch"><button type="button" class="btn btn-danger"
+                                    echo'<a href="'.$url.'/live"><button type="button" class="btn btn-danger"
                                             style="margin: 5% 1% 0 0;">STREAM</button></a>';
                                 ?>
                                 </div>

@@ -26,8 +26,10 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> >
 
+
+<div class="main-content">
     <?php ## SIDEBAR ## ?>
     <nav id="sidebar">
         <div id="dismiss">
@@ -50,7 +52,7 @@
     <?php ## NAVBAR ## ?>
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#"><img
+            <a class="navbar-brand" href="<?php echo get_site_url(); ?>"><img
                     src="<?php echo get_bloginfo('template_directory'); ?>/../../uploads/logo/logoPutih.png"
                     alt="UMN TV LOGO" class="img-fluid" style="max-width: 150px; height: auto;"></a>
 

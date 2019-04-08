@@ -18,7 +18,7 @@ function fontawesome() {
 
 function televisiumn_enqueue_scripts() {
     $dependencies = array('jquery');
-    wp_enqueue_script('JQuery', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', $dependencies, '', true );
+    wp_enqueue_script('JQuery', 'https://code.jquery.com/jquery-3.3.1.min.js', $dependencies, '', true );
 }
 
 function televisiumn_enqueue_scripts2() {

@@ -54,9 +54,20 @@ $pred: #d33a27;
 /* ---------------------------------------------------
     GLOBALS
 ----------------------------------------------------- */
+html, body{
+  height: 100%;
+}
+
 body {
   padding-top: 60px;
   font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content{
+  flex-grow: 1;
+  margin-top: 0px;
 }
 
 .btn {
@@ -306,13 +317,6 @@ a.article:hover {
     margin-right: -50%;
   }
 }
-
-.streamtitle {
-  overflow: hidden;
-  text-align: center;
-  font-weight: 700;
-  color: $offwhite;
-}
 /* ---------------------------------------------------
     END OF TITLE STYLE
 ----------------------------------------------------- */
@@ -404,14 +408,6 @@ a.article:hover {
   transform-origin: top left;
 }
 
-.footer {
-  position: relative;
-  overflow: hidden;
-  color: $offgrey02;
-  background-color: $offwhite;
-  padding: 1% 0 1% 0;
-}
-
 #contentTitle {
   height: 20vh;
 }
@@ -423,6 +419,13 @@ a.article:hover {
   margin: 0;
 }
 
+// LIVE STREAM
+.streamtitle {
+  overflow: hidden;
+  text-align: center;
+  font-weight: 700;
+  color: $offblack;
+}
 /* ---------------------------------------------------
     END OF CONTENT STYLE
 ----------------------------------------------------- */
@@ -430,7 +433,18 @@ a.article:hover {
 
 
 
-
 /* ---------------------------------------------------
     FOOTER
 ----------------------------------------------------- */
+.footer{
+  width: 100%;
+  padding: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  color: $offgrey02;
+  background-color: $offwhite;
+}
+
+.footer-container {
+  padding: 2em;
+}
