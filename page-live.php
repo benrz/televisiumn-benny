@@ -3,7 +3,7 @@
 <?php ## STREAM CONTENT ## ?>
 <div class="container">
         
-    <div class="row justify-content-center" id="contentTitle">
+    <div class="row justify-content-center contentTitle pt-4">
         <div class="col-12  align-self-center">
             <h1 class="streamtitle">Live Stream</h1>
         </div>
