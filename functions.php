@@ -117,8 +117,8 @@ add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 /* ---------------------------------------------------
     ADD PROGRAMS PORTFOLIO
 ----------------------------------------------------- */
+
 function program_custom_post_type (){
-	
 	$labels = array(
 		'name' => 'Programs',
 		'singular_name' => 'Program',
@@ -156,9 +156,11 @@ function program_custom_post_type (){
 	register_post_type('programs',$args);
 }
 add_action('init','program_custom_post_type');
+
 /* ---------------------------------------------------
     END OF ADD PROGRAMS PORTFOLIO
 ----------------------------------------------------- */
+
 
 /* ---------------------------------------------------
     PROGRAMS CATEGORIES
@@ -193,5 +195,6 @@ add_action('init','program_custom_post_type');
 /* ---------------------------------------------------
     PROGRAMS TAXONOMIES
 ----------------------------------------------------- */
+
 ?>
 
