@@ -38,7 +38,73 @@ get_header(); ?>
 
 	<div class="card-deck mb-4">
 		<?php 
-			$args = array('post_type' => 'programs', 'order' => 'ASC');
+			$catt_args= array(
+				'orderby'=> 'name',
+				'order'=> 'ASC'
+			);
+			$categories= get_categories();
+
+			foreach($categories as $category):
+				echo'<div class="card-deck mb-4">';
+				$args = array(
+					'post_type' => 'programs',
+					'posts_per_page' =>2,
+					'order' => 'ASC',
+					'category__in' => array($category->term_id)
+				);
+				$myQuery = new WP_Query($args);
+				$index= 0;
+				// $maxcard= 2;/*artinya maks 2*/
+				
+				if ( $myQuery->have_posts() ) : 
+					while ( $myQuery->have_posts() ) : $myQuery->the_post();
+						$thumb_id = get_post_thumbnail_id();
+						$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+						$thumb_url = $thumb_url_array[0];
+
+						$title = get_the_title();
+						$content = get_the_content();
+						$id= get_the_ID();
+						$url= get_post_permalink($id);
+
+						echo    '<div class="card">
+									<img src="'. $thumb_url .'" alt="Poster-'.$title.'" class="img-fluid card-img-top">
+									<div class="card-body">
+										<h5 class="card-title"><strong>'. $title .'</strong></h5>
+									</div>
+								</div>';
+
+						// if($index==($maxcard-1)):
+						// 	$index=0;
+						// 	echo    '<div class="w-100 d-none d-md-block mt-4"></div>
+						// 	';
+						// else:
+						// 	$index++;
+						// endif;
+
+					endwhile;
+					wp_reset_postdata();
+
+					// if($index!=0):
+					// 	while($index!=$maxcard):
+					// 		$index++;
+					// 		echo    '<div class="card" style="border: none;"></div>';
+					// 	endwhile;
+					// endif;
+
+				endif;
+				echo'</div>';
+			endforeach;
+		?>
+	</div>
+
+	<div class="card-deck mb-4">
+		<?php 
+			$args = array(
+				'post_type' => 'programs',
+				'category_name' => 'alphabet', 
+				'posts_per_page' =>2,
+				'order' => 'ASC');
 			$myQuery = new WP_Query($args);
 			$index= 0;
 			$maxcard= 2;/*artinya maks 2*/

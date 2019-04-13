@@ -42,7 +42,7 @@ $offgrey: #d7dbe4;
 $offgrey02: #8897AA;
 $offgrey03: #c2c6cf;
 
-$offwhite: #F6F9FC;
+$offwhite: #f1f5f8;
 
 $offblack: #4f5968;
 
@@ -54,9 +54,21 @@ $pred: #d33a27;
 /* ---------------------------------------------------
     GLOBALS
 ----------------------------------------------------- */
+html,
+body {
+  height: 100%;
+}
+
 body {
   padding-top: 60px;
   font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex-grow: 1;
+  margin-top: 0px;
 }
 
 .btn {
@@ -124,10 +136,10 @@ a:focus {
 
   a {
     color: $offgrey02 !important;
-  }
 
-  a:hover {
-    color: $blue06 !important;
+    &:hover {
+      color: $blue06 !important;
+    }
   }
 
   .active a {
@@ -154,7 +166,7 @@ a:focus {
   right: -250px;
   height: 100vh;
   z-index: 9991;
-  background-color: $blue02;
+  background-image: linear-gradient(to bottom, $blue01, $blue06);
   color: #fff;
   transition: all 0.3s;
   overflow-y: scroll;
@@ -186,7 +198,7 @@ a:focus {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background-color: $blue02;
+  background-color: $blue01;
   border-bottom: 1px solid white;
 }
 
@@ -213,12 +225,8 @@ a:focus {
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-  color: #fff;
-  background: #6d7fcc;
-
-  &::before {
-    content: "| ";
-  }
+  color: $blue03;
+  background: $offwhite;
 }
 
 a[data-toggle="collapse"] {
@@ -279,14 +287,118 @@ a.article:hover {
 ----------------------------------------------------- */
 
 
+
+
+
 /* ---------------------------------------------------
-    TITLE STYLE
+    CARD STYLE
 ----------------------------------------------------- */
+.card-deck {
+  box-sizing: border-box;
+
+  :hover {
+    .card-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.card {
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: rgba(255, 255, 255, 0.3);
+
+    .icon {
+      color: $fblue01;
+      font-size: 2em;
+      position: absolute;
+      bottom: 1%;
+      right: 1%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+  }
+}
+
+/* effect-shine */
+.effect-shine:hover {
+  -webkit-mask-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.6) 30%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+/* ---------------------------------------------------
+    END OF CARD STYLE
+----------------------------------------------------- */
+
+
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#headline {
+  color: white;
+  height: 80vh;
+}
+
+.skewed_top_left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 92vh;
+  background-image: linear-gradient(to bottom right, $purple01, $blue01, $blue03, $blue05, $blue06, $cyan01);
+  transform: skewY(-5deg);
+  transform-origin: top left;
+}
+
+/////////////////////////////////////
+//  Title Of Page
+/////////////////////////////////////
+#pageTitle {
+  margin-bottom: 1em;
+  padding-top: 3.5em;
+}
+
+.title-page {
+  overflow: hidden;
+  text-align: left;
+  font-weight: 900;
+  color: $offblack;
+}
+
+.contentTitle {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 .title {
   overflow: hidden;
   text-align: center;
-  font-weight: 700;
+  font-weight: 900;
   color: $offblack;
 
   &::before,
@@ -311,109 +423,30 @@ a.article:hover {
   }
 }
 
-/* ---------------------------------------------------
-    END OF TITLE STYLE
------------------------------------------------------ */
+/////////////////////////////////////
+//  END OF Title Of Page
+////////////////////////////////////
 
-/* ---------------------------------------------------
-    CARD STYLE
------------------------------------------------------ */
 
-/* ---------------------------------------------------
-    END OF CARD STYLE
------------------------------------------------------ */
-
-.card-deck {
-  box-sizing: border-box;
-  :hover{
-    .card-overlay{
-      opacity: 1;
-    }
-  }
-}
-.card {
-  .card-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .3s ease;
-    background-color: rgba(255, 255, 255, 0.3);
-    
-    .icon {
-      color: $fblue01;
-      font-size: 2em;
-      position: absolute;
-      bottom: 1%;
-      right: 1%;
-      transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      text-align: center;
-    }
-  }
-}
-// .card{
-//   background-color: $black03;
-// }
-/* effect-shine */
-.effect-shine:hover {
-  -webkit-mask-image: linear-gradient(-75deg, rgba(255, 255, 255, 0.6) 30%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0.6) 70%);
-  -webkit-mask-size: 200%;
-  animation: shine 2s infinite;
-}
-
-@-webkit-keyframes shine {
-  from {
-    -webkit-mask-position: 150%;
-  }
-  
-  to {
-    -webkit-mask-position: -50%;
-  }
-}
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
-#headline {
-  color: white;
-  height: 80vh;
-}
-
-.skewed_top_left {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 92vh;
-  background-image: linear-gradient(to bottom right, $purple01, $blue01, $blue03, $blue05, $blue06, $cyan01);
-  transform: skewY(-5deg);
-  transform-origin: top left;
-}
-
-.footer {
-  position: relative;
-  overflow: hidden;
-  color: $offgrey02;
-  background-color: $offwhite;
-  padding: 1% 0 1% 0;
-}
-
-#contentTitle {
-  height: 20vh;
-}
-
+/////////////////////////////////////
+//  Content
+/////////////////////////////////////
 #main-content {
-  // background: $black02;
-  // color: $brokenwhite;
   padding: 0;
   margin: 0;
 }
+
+// LIVE STREAM
+.streamtitle {
+  overflow: hidden;
+  text-align: center;
+  font-weight: 700;
+  color: $offblack;
+}
+
+/////////////////////////////////////
+//  END OF Content
+/////////////////////////////////////
 
 /* ---------------------------------------------------
     END OF CONTENT STYLE
@@ -422,7 +455,18 @@ a.article:hover {
 
 
 
-
 /* ---------------------------------------------------
     FOOTER
 ----------------------------------------------------- */
+.footer {
+  width: 100%;
+  padding: 0;
+  flex-shrink: 0;
+  overflow: hidden;
+  color: $offgrey02;
+  background-color: $offwhite;
+}
+
+.footer-container {
+  padding: 2em;
+}
