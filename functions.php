@@ -117,8 +117,8 @@ add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 /* ---------------------------------------------------
     ADD PROGRAMS PORTFOLIO
 ----------------------------------------------------- */
-
-function program_custom_post_type (){
+function awesome_custom_post_type (){
+	
 	$labels = array(
 		'name' => 'Programs',
 		'singular_name' => 'Program',
@@ -149,51 +149,61 @@ function program_custom_post_type (){
 			'thumbnail',
 			'revisions',
 		),
-		'taxonomies' => array('category'),
+		'taxonomies' => array('category', 'post_tag'),
 		'menu_position' => 4,
 		'exclude_from_search' => false
 	);
 	register_post_type('programs',$args);
 }
-add_action('init','program_custom_post_type');
-
+add_action('init','awesome_custom_post_type');
 /* ---------------------------------------------------
     END OF ADD PROGRAMS PORTFOLIO
 ----------------------------------------------------- */
 
-
 /* ---------------------------------------------------
-    PROGRAMS CATEGORIES
+    ADD CREWS PORTFOLIO
 ----------------------------------------------------- */
-
-// function program_custom_taxonomy(){
-// 	$labels= array(
-// 		'name' => 'Category',
-// 		'singular_name' => 'Categories',
-// 		'search_item' => 'Search Program Categories',
-// 		'all_items' => 'All Program Categories',
-// 		'parent_item' => 'Parent Program Category',
-// 		'parent_item_colon' => 'Parent Program Category:',
-// 		'edit_item' => 'Edit Program Category',
-// 		'update_item' => 'Update Program Category',
-// 		'add_new_item' => 'Add New Program Category',
-// 		'new_item_name' => 'New Program Category',
-// 		'menu_name' => 'Category'
-// 	);
-// 	$args= array(
-// 		'hierarchical' => true,
-// 		'labels' => $lables,
-// 		'show_ui' => true,
-// 		'show_admin_coloumn' => true,
-// 		'query_var' => true,
-// 		'rewrite' => array('slug' => 'categoryy')
-// 	);
-// 	register_taxonomy('categoryy',array('programs'),$args);
-// }
-// add_action('init','program_custom_taxonomy');
-
+function awesome_custom_crew_type (){
+	
+	$labels = array(
+		'name' => 'Crew',
+		'singular_name' => 'Crew',
+		'add_new' => 'Add crew',
+		'all_items' => 'All crews',
+		'add_new_item' => 'Add crew',
+		'edit_item' => 'Edit crew',
+		'new_item' => 'New crew',
+		'view_item' => 'View crew',
+		'search_item' => 'Search Portfolio',
+		'not_found' => 'No crews found',
+		'not_found_in_trash' => 'No crews found in trash',
+		'parent_item_colon' => 'Parent crew'
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'supports' => array(
+			'title',
+			'editor',
+			'excerpt',
+			'thumbnail',
+			'revisions',
+		),
+		'taxonomies' => array('category', 'post_tag'),
+		'menu_position' => 4,
+		'exclude_from_search' => false
+	);
+	register_post_type('crews',$args);
+}
+add_action('init','awesome_custom_crew_type');
 /* ---------------------------------------------------
-    PROGRAMS TAXONOMIES
+    END OF ADD crewS PORTFOLIO
 ----------------------------------------------------- */
 
 ?>
