@@ -161,6 +161,51 @@ add_action('init','program_custom_post_type');
     END OF ADD PROGRAMS PORTFOLIO
 ----------------------------------------------------- */
 
+/* ---------------------------------------------------
+    ADD CREWS PORTFOLIO
+----------------------------------------------------- */
+function crew_custom_post_type (){
+	
+	$labels = array(
+		'name' => 'Crew',
+		'singular_name' => 'Crew',
+		'add_new' => 'Add crew',
+		'all_items' => 'All crews',
+		'add_new_item' => 'Add crew',
+		'edit_item' => 'Edit crew',
+		'new_item' => 'New crew',
+		'view_item' => 'View crew',
+		'search_item' => 'Search Portfolio',
+		'not_found' => 'No crews found',
+		'not_found_in_trash' => 'No crews found in trash',
+		'parent_item_colon' => 'Parent crew'
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'supports' => array(
+			'title',
+			'editor',
+			'excerpt',
+			'thumbnail',
+			'revisions',
+		),
+		'taxonomies' => array('category'),
+		'menu_position' => 4,
+		'exclude_from_search' => false
+	);
+	register_post_type('crews',$args);
+}
+add_action('init','crew_custom_post_type');
+/* ---------------------------------------------------
+    END OF ADD CREWS PORTFOLIO
+----------------------------------------------------- */
 
 /* ---------------------------------------------------
     PROGRAMS CATEGORIES
