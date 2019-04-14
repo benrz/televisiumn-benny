@@ -305,7 +305,7 @@ a.article:hover {
 .title {
   overflow: hidden;
   text-align: center;
-  font-weight: 900;
+  font-weight: 700;
   color: #4f5968; }
   .title::before, .title::after {
     background-color: #c2c6cf;
@@ -326,11 +326,47 @@ a.article:hover {
   padding: 0;
   margin: 0; }
 
+.carousel-item {
+  max-height: 80vh; }
+
+.news-headline {
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 3em; }
+
+#carousel-news-title {
+  font-weight: 700;
+  color: #f1f5f8; }
+
 .streamtitle {
   overflow: hidden;
   text-align: center;
   font-weight: 700;
   color: #4f5968; }
+
+.news-title {
+  font-weight: 900; }
+
+.news-datetime {
+  color: #8897AA; }
+
+.news-cat {
+  text-transform: uppercase;
+  color: #371AB2; }
+
+#side-news-title {
+  font-size: 1.1em; }
+  #side-news-title:hover {
+    color: #1F71D7; }
+
+.side-news-maintitle {
+  background-color: #eeeeeeb7; }
+  .side-news-maintitle h1 {
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+    font-weight: 800; }
 
 /* ---------------------------------------------------
     END OF CONTENT STYLE

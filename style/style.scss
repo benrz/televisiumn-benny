@@ -36,7 +36,7 @@ $black02: #1f2020;
 $black03: #141618;
 $black04: #1a1c1f;
 
-$brokenwhite: #e9e9e9;
+$brokenwhite: #eeeeeeb7;
 
 $offgrey: #d7dbe4;
 $offgrey02: #8897AA;
@@ -398,7 +398,7 @@ a.article:hover {
 .title {
   overflow: hidden;
   text-align: center;
-  font-weight: 900;
+  font-weight: 700;
   color: $offblack;
 
   &::before,
@@ -436,6 +436,21 @@ a.article:hover {
   margin: 0;
 }
 
+//HOME CAROUSEL
+.carousel-item{
+  max-height: 80vh;
+}
+.news-headline{
+  text-align: center;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 3em;
+}
+#carousel-news-title{
+  font-weight: 700;
+  color: $offwhite;
+}
+
 // LIVE STREAM
 .streamtitle {
   overflow: hidden;
@@ -444,6 +459,43 @@ a.article:hover {
   color: $offblack;
 }
 
+//SINGLE POST NEWS
+.news-title{
+  font-weight: 900;
+  
+}
+
+.news-datetime{
+  color: $offgrey02;
+}
+
+.news-cat{
+  text-transform: uppercase;
+  color: $purple02;
+}
+
+  //SIDE NEWS
+#side-news-title{
+  font-size: 1.1em;
+
+  &:hover{
+    color:$blue03;
+  }
+}
+
+.side-news-maintitle{
+  background-color: $brokenwhite;
+  h1{
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+    font-weight: 800;
+  }
+}
+
+.side-news{
+  // background-color: $brokenwhite;
+}
 /////////////////////////////////////
 //  END OF Content
 /////////////////////////////////////

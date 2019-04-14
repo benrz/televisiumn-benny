@@ -39,11 +39,11 @@ get_header(); ?>
 
 	<div class="card-deck mb-4">
 		<?php 
-			$catt_args= array(
+			$cat_args= array(
 				'orderby'=> 'name',
 				'order'=> 'ASC'
 			);
-			$categories= get_categories();
+			$categories= get_categories($cat_args);
 
 			foreach($categories as $category):
 				echo'<div class="card-deck mb-4">';
@@ -153,6 +153,6 @@ get_header(); ?>
 	</div>
 
 </div>
-<?php ## END OF NEW SEASON ## ?>
+<?php ## END OF PROGRAMS GALLERY ## ?>
 
 <?php get_footer(); ?>

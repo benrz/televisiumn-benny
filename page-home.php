@@ -28,12 +28,12 @@
         <div class="carousel-inner">
 
             <?php ## First Item ## ?>
-            <div class="carousel-item active">
+            <div class="carousel-item">
                 <div class="container">
-                    <div id="headline" class="row justify-content-center align-items-center">
+                    <div id="headline" class="row justify-content-center align-items-center mx-md-5 mx-1">
                         <div class="col-12">
                             <h4>Welcome to UMN TV Official Website.</h4>
-                            <div class="col-12 col-md-6 px-0">
+                            <div class="col-12 col-md-8 px-0">
                                 <p>
                                     UMN TV merupakan lembaga pers yang diresmikan pada 31 Maret 2015. UMN TV melakukan
                                     produksi program - program unggulan berbasis streaming. UMN TV menjadi wadah dan
@@ -65,15 +65,46 @@
 
 
             <?php ## Second Item ## ?>
-            <!-- <div class="carousel-item">
-                <div class="container">
+            <div class="carousel-item active">
+                <div class="container my-4">
                     <div id="headline" class="row justify-content-center align-items-center">
-                        <div class="col-12">
+                    <div class="col-12">
+                        <h1 class="news-headline mb-2">Headline</h1>
+                            <?php 
+                            $args = array(
+                                    'post_type' => 'post', 
+                                    'order' => 'DESC',
+                                    'posts_per_page' =>1
+                                );
+                                $myQuery = new WP_Query($args);
+                                
+                                if ( $myQuery->have_posts() ) : 
+                                    while ( $myQuery->have_posts() ) : $myQuery->the_post();
+                                        $id= get_the_ID();
+                                        $url= get_post_permalink($id);
 
+                                        if( has_post_thumbnail() ): 
+                                            $thumb_id = get_post_thumbnail_id();
+                                            $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+                                            $thumb_url = $thumb_url_array[0];
+                                        
+                                            echo'<div class="row justify-content-center align-items-center">
+                                                    <a class="col-12 col-md-7 my-2" href="'.$url.'">
+                                                        <img src="'.$thumb_url.'" class="img-fluid">
+                                                    </a>';
+                                        endif; ?>
+
+                                        <?php the_title('<a class="col-12 col-md-7" href="'.$url.'"><h3 id=
+                                        "carousel-news-title">','</h3></a>' ); ?>
+                                    </div>	
+                                <?php endwhile;
+                                
+                            endif;
+                            ?>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
             <?php ## END OF Second Item ## ?>
 
 
@@ -91,14 +122,14 @@
 
         </div>
 
-        <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
-        </a> -->
+        </a>
 
     </div>
     <?php ## END OF TOP CAROUSEL ## ?>
@@ -106,7 +137,7 @@
 
 
     <?php ## NEW SEASON ## ?>
-    <div class="container" style="margin-top:3%;">
+    <div class="container" style="margin-top:7%;">
         <div class="row justify-content-center contentTitle">
             <div class="col-12  align-self-center">
                 <h1 class="title">New Season</h1>
