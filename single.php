@@ -22,12 +22,6 @@
                                 $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
                                 $thumb_url = $thumb_url_array[0];
                                 $post_category = get_the_category();
-
-                                echo' <div class="row justify-content-center">
-                                        <div class="col-md-11 col-12 align-self-center">
-                                            <img src="'. $thumb_url .'" class="img-fluid news-img p-0 my-2">
-                                        </div>
-                                    </div>';
                             endif;?>
 
                             <div class="row justify-content-center">

@@ -30,7 +30,7 @@
             <?php ## First Item ## ?>
             <div class="carousel-item">
                 <div class="container">
-                    <div id="headline" class="row justify-content-center align-items-center mx-md-5 mx-1">
+                    <div id="headline" class="row justify-content-center align-items-center mx-md-5 mx-1 mt-3">
                         <div class="col-12">
                             <h4>Welcome to UMN TV Official Website.</h4>
                             <div class="col-12 col-md-8 px-0">
@@ -94,8 +94,11 @@
                                                     </a>';
                                         endif; ?>
 
-                                        <?php the_title('<a class="col-12 col-md-7" href="'.$url.'"><h3 id=
-                                        "carousel-news-title">','</h3></a>' ); ?>
+                                        <?php the_title('<a class="col-12 col-md-7" href="'.$url.'">
+                                                            <h3 id="carousel-news-title">','</h3>
+                                                        </a>' ); 
+                                        ?>
+
                                     </div>	
                                 <?php endwhile;
                                 
@@ -140,7 +143,7 @@
     <div class="container" style="margin-top:7%;">
         <div class="row justify-content-center contentTitle">
             <div class="col-12  align-self-center">
-                <h1 class="title">New Season</h1>
+                <h1 class="title mb-3">New Season</h1>
             </div>
         </div>
 

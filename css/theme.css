@@ -276,7 +276,7 @@ a.article:hover {
   right: 0;
   left: 0;
   width: 100%;
-  height: 92vh;
+  height: 95vh;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#3F04AC), color-stop(#3235C0), color-stop(#1F71D7), color-stop(#2A93EE), color-stop(#35C1EB), to(#3FE1E3));
   background-image: -webkit-linear-gradient(top left, #3F04AC, #3235C0, #1F71D7, #2A93EE, #35C1EB, #3FE1E3);
   background-image: -o-linear-gradient(top left, #3F04AC, #3235C0, #1F71D7, #2A93EE, #35C1EB, #3FE1E3);
