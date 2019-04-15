@@ -140,7 +140,7 @@
 
 
     <?php ## NEW SEASON ## ?>
-    <div class="container" style="margin-top:7%;">
+    <div class="container mt-5 pt-2 pt-lg-0">
         <div class="row justify-content-center contentTitle">
             <div class="col-12  align-self-center">
                 <h1 class="title mb-3">New Season</h1>
@@ -176,7 +176,7 @@
 
                         if($index==($maxcard-1)):
                             $index=0;
-                            echo    '<div class="w-100 d-none d-md-block mt-4"></div>
+                            echo    '<div class="w-100 d-none d-sm-block mt-4"></div>
                             ';
                         else:
                             $index++;
