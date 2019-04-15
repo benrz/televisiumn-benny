@@ -140,7 +140,7 @@
 
 
     <?php ## NEW SEASON ## ?>
-    <div class="container mt-5 pt-2 pt-lg-0">
+    <div class="container mt-3 mt-md-5 pt-2 pt-lg-0">
         <div class="row justify-content-center contentTitle">
             <div class="col-12  align-self-center">
                 <h1 class="title mb-3">New Season</h1>
