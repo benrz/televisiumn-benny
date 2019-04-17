@@ -28,7 +28,7 @@
         <div class="carousel-inner">
 
             <?php ## First Item ## ?>
-            <div class="carousel-item">
+            <div class="carousel-item active">
                 <div class="container">
                     <div id="headline" class="row justify-content-center align-items-center mx-md-5 mx-1 mt-3">
                         <div class="col-12">
@@ -64,52 +64,106 @@
             <?php ## END OF First Item ## ?>
 
 
-            <?php ## Second Item ## ?>
-            <div class="carousel-item active">
-                <div class="container my-4">
-                    <div id="headline" class="row justify-content-center align-items-center">
-                    <div class="col-12">
-                        <h1 class="news-headline mb-2">Headline</h1>
-                            <?php 
-                            $args = array(
-                                    'post_type' => 'post', 
-                                    'order' => 'DESC',
-                                    'posts_per_page' =>1
-                                );
-                                $myQuery = new WP_Query($args);
+            <?php ## Second Item ## HEADLINE ONLY
+            // <div class="carousel-item active">
+                // <div class="container my-4">
+                //     <div id="headline" class="row justify-content-center align-items-center">
+                //     <div class="col-12">
+                //         <h1 class="news-headline mb-0">Headline</h1>
+                            //<?php 
+            //                 $args = array(
+            //                         'post_type' => 'post', 
+            //                         'order' => 'DESC',
+            //                         'posts_per_page' =>1
+            //                     );
+            //                     $myQuery = new WP_Query($args);
                                 
-                                if ( $myQuery->have_posts() ) : 
-                                    while ( $myQuery->have_posts() ) : $myQuery->the_post();
-                                        $id= get_the_ID();
-                                        $url= get_post_permalink($id);
+            //                     if ( $myQuery->have_posts() ) : 
+            //                         while ( $myQuery->have_posts() ) : $myQuery->the_post();
+            //                             $id= get_the_ID();
+            //                             $url= get_post_permalink($id);
 
-                                        if( has_post_thumbnail() ): 
-                                            $thumb_id = get_post_thumbnail_id();
-                                            $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
-                                            $thumb_url = $thumb_url_array[0];
+            //                             if( has_post_thumbnail() ): 
+            //                                 $thumb_id = get_post_thumbnail_id();
+            //                                 $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+            //                                 $thumb_url = $thumb_url_array[0];
                                         
-                                            echo'<div class="row justify-content-center align-items-center">
-                                                    <a class="col-12 col-md-7 my-2" href="'.$url.'">
-                                                        <img src="'.$thumb_url.'" class="img-fluid">
-                                                    </a>';
-                                        endif; ?>
+            //                                 echo'<div class="row justify-content-center align-items-center">
+            //                                         <a class="col-12 col-md-7 text-center align-self-center my-2" href="'.$url.'">
+            //                                             <img src="'.$thumb_url.'" id= "carousel-news-img" class="img-fluid ">
+            //                                         </a>';
+            //                             endif; 
 
-                                        <?php the_title('<a class="col-12 col-md-7" href="'.$url.'">
-                                                            <h3 id="carousel-news-title">','</h3>
-                                                        </a>' ); 
-                                        ?>
+            //                             <?php the_title('<a class="col-12 col-md-7" href="'.$url.'">
+            //                                                 <h4 id="carousel-news-title">','</h4>
+            //                                             </a>' ); 
+            //                             
 
-                                    </div>	
-                                <?php endwhile;
+            //                         </div>	
+            //                     <?php endwhile;
                                 
-                            endif;
-                            ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php ## END OF Second Item ## ?>
+            //                 endif;
+            //                 
+            //             </div>
+            //         </div>
+            //     </div>
+            // </div>
+            ?>
 
+            <?php ## END OF Second Item HEADLINE ONLY ## ?>
+            
+            <?php ## Second and Third Item## ?>
+            <?php 
+                $args = array(
+                        'post_type' => 'post', 
+                        'order' => 'DESC',
+                        'posts_per_page' =>2
+                    );
+                $myQuery = new WP_Query($args);
+                $index= 0;
+
+                if ( $myQuery->have_posts() ) : 
+                    while ( $myQuery->have_posts() ) : $myQuery->the_post();
+
+                        $id= get_the_ID();
+                        $url= get_post_permalink($id);
+
+                        if($index==0):
+                            $title= 'Headline';
+                        else:
+                            $title= 'Most Recent';
+                        endif;
+
+                        if( has_post_thumbnail() ): 
+                            $thumb_id = get_post_thumbnail_id();
+                            $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+                            $thumb_url = $thumb_url_array[0];
+                            $index++;
+
+                            echo'<div class="carousel-item">
+                                    <div class="container my-4">
+                                        <div id="headline" class="row justify-content-center align-items-center">
+                                            <div class="col-12">
+                                                <h1 class="news-headline mb-0">'.$title.'</h1>
+                                                <div class="row justify-content-center align-items-center">
+                                                    <a class="col-12 col-md-7 text-center align-self-center my-2 p-0" href="'.$url.'">
+                                                        <img src="'.$thumb_url.'" id= "carousel-news-img" class="img-fluid">
+                                                    </a>';
+                        endif;
+
+                        the_title('<a class="col-12 col-md-7" href="'.$url.'">
+                                        <h4 id="carousel-news-title">','</h4>
+                                    </a>' ); 
+                        echo'               </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>';
+                    endwhile;
+                endif;
+            ?>
+
+            <?php ## Second and Third Item## ?>
 
             <?php ## Third Item ## ?>
             <!-- <div class="carousel-item">
@@ -140,7 +194,7 @@
 
 
     <?php ## NEW SEASON ## ?>
-    <div class="container mt-3 mt-md-5 pt-2 pt-lg-0">
+    <div class="container mt-3 mt-md-5 pt-2 pt-lg-1">
         <div class="row justify-content-center contentTitle">
             <div class="col-12  align-self-center">
                 <h1 class="title mb-3">New Season</h1>
