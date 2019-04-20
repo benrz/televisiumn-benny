@@ -25,7 +25,7 @@
                             endif;?>
 
                             <div class="row justify-content-center">
-                                <div class="col-12 col-md-11 my-1">
+                                <div class="col-12 col-md-11 my-1" id="content">
                                     
                                 <?php the_content(); ?>
                                 </div>

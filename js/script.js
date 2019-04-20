@@ -63,3 +63,8 @@ $(document).ready(function() {
         loadVideo(iframes[i]);
     }
 });
+
+/* News Single Post */
+$(document).ready(function () {
+    $("#content").find('img').addClass("img-fluid");
+});
