@@ -21,7 +21,8 @@
                                 $thumb_id = get_post_thumbnail_id();
                                 $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
                                 $thumb_url = $thumb_url_array[0];
-                                $post_category = get_the_category();
+                                echo'<meta property="og:image" content="'.$thumb_url.'">';
+                                // $post_category = get_the_category();
                             endif;?>
 
                             <div class="row justify-content-center">
