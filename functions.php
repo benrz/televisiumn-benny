@@ -18,22 +18,23 @@ function fontawesome() {
 
 function televisiumn_enqueue_scripts() {
     $dependencies = array('jquery');
-    wp_enqueue_script('bootstrap', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', $dependencies, '', true );
+    wp_enqueue_script('JQuery', 'https://code.jquery.com/jquery-3.3.1.min.js', $dependencies, '', true );
 }
 
 function televisiumn_enqueue_scripts2() {
     $dependencies = array('jquery');
-    wp_enqueue_script('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', $dependencies, '', true );
+    wp_enqueue_script('PopperJS', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', $dependencies, '', true );
 }
 
 function televisiumn_enqueue_scripts3() {
     $dependencies = array('jquery');
-    wp_enqueue_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', $dependencies, '', true );
+    wp_enqueue_script('BootstrapJS', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', $dependencies, '', true );
 }
 
 function customjs() {
+	wp_enqueue_script( 'customjsScroller', 'https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js', array(), '', true );
+	wp_enqueue_script( 'JSParticle', get_template_directory_uri() . '/js/particles.min.js', array(), '', true );
     wp_enqueue_script( 'customjs', get_template_directory_uri() . '/js/script.js', array(), '', true );
-    wp_enqueue_script( 'customjsScroller', 'https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js', array(), '', true );
 }
 
 add_action( 'wp_enqueue_scripts', 'bootstrapcss' );
@@ -65,7 +66,7 @@ add_action( 'after_setup_theme', 'televisiumn_wp_setup' );
 ----------------------------------------------------- */
 add_theme_support('post-thumbnails');
 /* ---------------------------------------------------
-    END OF REGISTER MENU
+    END OF THEME SUPPORT
 ----------------------------------------------------- */
 
 
@@ -116,8 +117,8 @@ add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 /* ---------------------------------------------------
     ADD PROGRAMS PORTFOLIO
 ----------------------------------------------------- */
-function awesome_custom_post_type (){
-	
+
+function program_custom_post_type (){
 	$labels = array(
 		'name' => 'Programs',
 		'singular_name' => 'Program',
@@ -148,18 +149,173 @@ function awesome_custom_post_type (){
 			'thumbnail',
 			'revisions',
 		),
-		'taxonomies' => array('category', 'post_tag'),
+		// 'taxonomies' => array('category'),
 		'menu_position' => 4,
 		'exclude_from_search' => false
 	);
 	register_post_type('programs',$args);
 }
-add_action('init','awesome_custom_post_type');
+add_action('init','program_custom_post_type');
+
 /* ---------------------------------------------------
     END OF ADD PROGRAMS PORTFOLIO
 ----------------------------------------------------- */
 
+/* ---------------------------------------------------
+    ADD CREWS PORTFOLIO
+----------------------------------------------------- */
+function crew_custom_post_type (){
+	
+	$labels = array(
+		'name' => 'Crew',
+		'singular_name' => 'Crew',
+		'add_new' => 'Add crew',
+		'all_items' => 'All crews',
+		'add_new_item' => 'Add crew',
+		'edit_item' => 'Edit crew',
+		'new_item' => 'New crew',
+		'view_item' => 'View crew',
+		'search_item' => 'Search Portfolio',
+		'not_found' => 'No crews found',
+		'not_found_in_trash' => 'No crews found in trash',
+		'parent_item_colon' => 'Parent crew'
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => true,
+		'publicly_queryable' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'supports' => array(
+			'title',
+			'editor',
+			'excerpt',
+			'thumbnail',
+			'revisions',
+		),
+		// 'taxonomies' => array('category'),
+		'menu_position' => 5,
+		'exclude_from_search' => false
+	);
+	register_post_type('crews',$args);
+}
+add_action('init','crew_custom_post_type');
+/* ---------------------------------------------------
+    END OF ADD CREWS PORTFOLIO
+----------------------------------------------------- */
+
+/* ---------------------------------------------------
+    TAXONOMIES
+----------------------------------------------------- */
+
+function custom_taxonomies() {
+	
+	//add new taxonomy hierarchical
+	$labels = array(
+		'name' => 'Positions',
+		'singular_name' => 'Position',
+		'search_item' => 'Search Positions',
+		'all_items' => 'All Positions',
+		'parent_item' => 'Parent Position',
+		'parent_item_colon' => 'Parent Position:',
+		'edit_item' => 'Edit Position',
+		'update_item' => 'Update Position',
+		'add_new_item' => 'Add New Position',
+		'new_item_name' => 'New Position Title',
+		'menu_name' => 'Position'
+	);
+	
+	$args = array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'positions' )
 
 
+	);
+	
+	register_taxonomy('positions', array('crews'), $args);
+	
+	register_taxonomy('program-category', 'programs', array(
+		'label' => 'Program Category',
+		'rewrite' => array( 'slug' => 'program-category' ),
+		'hierarchical' => false
+	) );
+	
+}
+add_action( 'init' , 'custom_taxonomies' );
+
+// /*--PROGRAMS TAXONOMIES--*/
+// function program_custom_taxonomy(){
+// 	$labels= array(
+// 		'name' => 'Types',
+// 		'singular_name' => 'Type',
+// 		'search_item' => 'Search Types',
+// 		'all_items' => 'All Types',
+// 		'parent_item' => 'Parent Type',
+// 		'parent_item_colon' => 'Parent Type:',
+// 		'edit_item' => 'Edit Type',
+// 		'update_item' => 'Update Type',
+// 		'add_new_item' => 'Add New Type',
+// 		'new_item_name' => 'New Type',
+// 		'menu_name' => 'Type'
+// 	);
+// 	$args= array(
+// 		'hierarchical' => true,
+// 		'labels' => $lables,
+// 		'show_ui' => true,
+// 		'show_admin_coloumn' => true,
+// 		'query_var' => true,
+// 		'rewrite' => array('slug' => 'programcategory')
+// 	);
+// 	register_taxonomy('programcategory',array('programs'),$args);
+// }
+// add_action('init','program_custom_taxonomy');
+// /*--END OF PROGRAMS TAXONOMIES--*/
+
+
+/*--CREWS TAXONOMIES--*/
+// function crew_custom_taxonomy(){
+// 	$labels= array(
+// 		'name' => 'Positions',
+// 		'singular_name' => 'Position',
+// 		'search_item' => 'Search Positions',
+// 		'all_items' => 'All Positions',
+// 		'parent_item' => 'Parent Position',
+// 		'parent_item_colon' => 'Parent Position:',
+// 		'edit_item' => 'Edit Position',
+// 		'update_item' => 'Update Position',
+// 		'add_new_item' => 'Add New Position',
+// 		'new_item_name' => 'New Position',
+// 		'menu_name' => 'Position'
+// 	);
+// 	$args= array(
+// 		'hierarchical' => true,
+// 		'labels' => $lables,
+// 		'show_ui' => true,
+// 		'show_admin_coloumn' => true,
+// 		'query_var' => true,
+// 		'rewrite' => array('slug' => 'position')
+// 	);
+// 	register_taxonomy('position',array('crews'),$args);
+
+// 	/*--PROGRAMS TAXONOMIES--*/
+// 	register_taxonomy('programcategory','programs',array(
+// 		'label' => 'ProgramCat',
+// 		'rewrite' => array('slug' => 'pprogramcategory'),
+// 		'hierarchical' => false
+// 	)  );
+// }
+// add_action('init','crew_custom_taxonomy');
+/*--END OF CREWS TAXONOMIES--*/
+
+/* ---------------------------------------------------
+    END OF TAXONOMIES
+----------------------------------------------------- */
 ?>
 
